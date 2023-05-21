@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         String heightString = editTextHeight.getText().toString();
 
         if (weightString.isEmpty() || heightString.isEmpty()) {
-            Toast.makeText(this, "Please enter weight and height values", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Por favor, insira os valores da altura e peso corretamente.", Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
             imcCategory = "Obesidade grau III";
         }
 
-        String result = "Seu IMC é: " + String.format("%.1f", imc) + "kg/m2." + "\nCategoria: " + imcCategory;
+        String result = "Seu IMC é: " + String.format("%.1f", imc) + "kg/m²." + "\nCategoria: " + imcCategory;
         Toast.makeText(this, result, Toast.LENGTH_LONG).show();
     }
 }
