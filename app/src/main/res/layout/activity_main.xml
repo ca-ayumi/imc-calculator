@@ -8,122 +8,188 @@
     android:paddingTop="16dp"
     android:paddingRight="16dp"
     android:paddingBottom="16dp"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
 
+    <View
+        android:id="@+id/action_container"
+        style="@style/ContainerComponents"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewInformation"></View>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textViewInformation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Coloque os seus dados na calculadora e calcule o seu IMC:"
-        android:textSize="18sp"
+        android:layout_marginTop="15dp"
+        android:text="@string/text_Information"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="31dp" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewSex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="88dp"
-        android:text="Sexo:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="275dp"
+        android:text="@string/text_sex"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toStartOf="@id/action_container"
+        app:layout_constraintTop_toTopOf="@id/action_container" />
+
+    <RadioGroup
+        android:id="@+id/radioGroupSex"
+        android:layout_width="351dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="25dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toStartOf="@id/action_container"
+        app:layout_constraintTop_toTopOf="@id/textViewSex">
+
+        <RadioButton
+            android:id="@+id/radioButtonMale"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:text="@string/radio_men"
+            android:textColor="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <RadioButton
+            android:id="@+id/radioButtonFemale"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="120dp"
+            android:text="@string/radio_woman"
+            android:textColor="@color/black"
+            tools:ignore="TouchTargetSizeCheck" />
+    </RadioGroup>
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textViewAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:text="Idade:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioButtonFemale" />
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="275dp"
+        android:text="@string/text_age"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toStartOf="@id/action_container"
+        app:layout_constraintTop_toBottomOf="@id/radioGroupSex" />
 
     <EditText
         android:id="@+id/editTextAge"
-        android:layout_width="104dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:hint="Ex: 35 anos"
+        style="@style/TextBox"
+        android:hint="@string/hint_age"
         android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toStartOf="@id/action_container"
+        app:layout_constraintTop_toBottomOf="@id/textViewAge"
+        tools:ignore="Autofill" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textViewHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:text="Altura:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextAge" />
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="275dp"
+        android:text="@string/text_height"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toStartOf="@id/action_container"
+        app:layout_constraintTop_toBottomOf="@id/editTextAge" />
 
     <EditText
+        style="@style/TextBox"
         android:id="@+id/editTextHeight"
-        android:layout_width="105dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:hint="Ex: 165 cm"
+        android:hint="@string/hint_height"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toStartOf="@id/action_container"
+        app:layout_constraintTop_toBottomOf="@id/textViewHeight"
+        android:importantForAutofill="no"
+        android:textColor="@color/black"/>
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textViewWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="30dp"
-        android:text="Peso:"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextHeight" />
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="275dp"
+        android:text="@string/text_weight"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toStartOf="@id/action_container"
+        app:layout_constraintTop_toBottomOf="@id/editTextHeight" />
 
     <EditText
+        style="@style/TextBox"
         android:id="@+id/editTextWeight"
-        android:layout_width="102dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:hint="Ex: 62.5 kg"
+        android:hint="@string/hint_weight"
         android:inputType="numberDecimal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toStartOf="@id/action_container"
+        app:layout_constraintTop_toBottomOf="@id/textViewWeight"
+        tools:ignore="Autofill"/>
 
     <Button
         android:id="@+id/buttonCalculate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="544dp"
-        android:text="Calcular"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_width="306dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="10dp"
+        android:text="@string/button_calculate"
+        app:layout_constraintBottom_toBottomOf="@id/action_container"
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toStartOf="@id/action_container"/>
 
-    <RadioButton
-        android:id="@+id/radioButtonFemale"
+    <TextView
+        android:id="@+id/textViewAgeWord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="88dp"
-        android:layout_marginTop="15dp"
-        android:text="Mulher"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:text="@string/mesure_age"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toEndOf="@+id/editTextAge"
+        app:layout_constraintTop_toBottomOf="@id/textViewAge"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="86dp"/>
 
-    <RadioButton
-        android:id="@+id/radioButtonMale"
+    <TextView
+        android:id="@+id/textViewCm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="88dp"
-        android:text="Homem"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        android:text="@string/mesure_cm"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toEndOf="@+id/editTextHeight"
+        app:layout_constraintTop_toBottomOf="@id/textViewHeight"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="98dp"/>
+
+    <TextView
+        android:id="@+id/textViewKg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/mesure_kg"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="@id/action_container"
+        app:layout_constraintStart_toEndOf="@+id/editTextWeight"
+        app:layout_constraintTop_toBottomOf="@id/textViewWeight"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="100dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

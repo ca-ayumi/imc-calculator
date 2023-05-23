@@ -52,11 +52,11 @@ public class MainActivity extends AppCompatActivity {
         } else if (imc < 29.9) {
             imcCategory = "Sobrepeso";
         } else if (imc < 34.9) {
-            imcCategory = "Obesidade grau I";
+            imcCategory = "Obesidade";
         } else if (imc < 39.9) {
-            imcCategory = "Obesidade grau II";
+            imcCategory = "Obesidade severa";
         } else {
-            imcCategory = "Obesidade grau III";
+            imcCategory = "Obesidade mórbida";
         }
 
         String result = "Seu IMC é: " + String.format("%.1f", imc) + "kg/m²." + "\nCategoria: " + imcCategory;
